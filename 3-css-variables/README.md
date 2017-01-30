@@ -26,7 +26,7 @@ Object of type `DOMStringMap` that contains all of the **data attributes** for a
 const widthInput = document.querySelector('#width');
 
 console.log(widthInput.dataset); // returns { sizing: 'px', initial: 10 }
-``
+```
 
 ## HTML Input types
 
@@ -37,7 +37,7 @@ console.log(widthInput.dataset); // returns { sizing: 'px', initial: 10 }
 
 All CSS vars should be declared prepending a **double dash** within the `:root {}` pseudo class.
 
-```
+```css
 :root {
   --base: #ffc600;
   --spacing: 10px;
