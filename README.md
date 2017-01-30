@@ -6,7 +6,7 @@
 
 | # | Description |
 |---|-------------|
-| [1](./1) | **Drum kit** |
-| [2](./2) | **Clock** |
-| [3](./3) | **CSS Variables** |
-| [4](./4) | **Array Methods** |
+| [1](./1-drum-kit) | **Drum kit** |
+| [2](./2-clock) | **Clock** |
+| [3](./3-css-variables) | **CSS Variables** |
+| [4](./4-array-methods) | **Array Methods** |
