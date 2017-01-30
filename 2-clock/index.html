@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Clock</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="clock">
+    <div class="clock-face">
+      <div class="hand hour-hand"></div>
+      <div class="hand min-hand"></div>
+      <div class="hand second-hand"></div>
+    </div>
+  </div>
+
+  <!-- Logic -->
+  <script>
+    // Selectors
+    const secondsHand = document.querySelector('.second-hand');
+    const minutesHand = document.querySelector('.min-hand');
+    const hoursHand = document.querySelector('.hour-hand');
+
+    function setDate() {
+      const now = new Date();
+
+      // Seconds
+      const seconds = now.getSeconds();
+      const secondsDegrees = ((seconds / 60) * 360) + 90;
+
+      // Minutes
+      const minutes = now.getMinutes();
+      const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 90;
+
+      // Hours
+      const hours = now.getHours();
+      const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 90;
+
+      secondsHand.style.transform = `rotate(${secondsDegrees}deg)`;
+      minutesHand.style.transform = `rotate(${minutesDegrees}deg)`;
+      hoursHand.style.transform = `rotate(${hoursDegrees}deg)`;
+    }
+
+    // Update the clock every 1 second
+    setInterval(setDate, 1000);
+
+    // Initialise the clock
+    setDate();
+  </script>
+
+</body>
+</html>
