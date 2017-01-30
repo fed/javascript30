@@ -1,5 +1,19 @@
 # Key Points
 
+## Accessing HTML elements attributes
+
+```html
+<input id="width" name="width" type="range" />
+```
+
+```js
+const widthInput = document.querySelector('#width');
+
+console.log(widthInput.id); // returns "width"
+console.log(widthInput.name); // returns "width-input"
+console.log(widthInput.type); // returns "range"
+```
+
 ## Data attributes and the `dataset` property
 
 Object of type `DOMStringMap` that contains all of the **data attributes** for a particular HTML element.
