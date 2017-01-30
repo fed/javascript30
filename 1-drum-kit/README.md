@@ -37,7 +37,9 @@ element.classList.remove('playing');
 const keys = Array.from(document.querySelectorAll('.key'));
 ```
 
-we now have access to methods like `filter`, `map`, `forEach`, etc.
+we now have access to methods like `filter`, `map`, etc.
+
+However since we are only using `forEach` here, turning this into an actual array is not really necessary as `NodeList` implements the `forEach` interface.
 
 ## Attaching events using `addEventListener`
 
