@@ -1,5 +1,13 @@
 # Key Points
 
+| Operator | Takes in | Returns | Number of Elements of Resulting Array |
+|----------|----------|---------|---------------------------------------|
+| `map` | Array | Array | Same |
+| `filter` | Array | Array | Same or less than the original |
+| `reduce` | Array | Object | N/A |
+| `sort` | Array | Array | Same |
+
+
 ## Filter
 
 ```js
