@@ -10,3 +10,4 @@
 | [2](./2-clock) | Clock |
 | [3](./3-css-variables) | CSS Variables |
 | [4](./4-array-methods) | Array Methods |
+| [6](./6-ajax-typeahead-search) | Ajax Typeahead search |
