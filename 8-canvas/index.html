@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <canvas id="canvas" />
+
+  <!-- Logic -->
+  <script>
+    const canvas = document.querySelector('#canvas');
+    const context = canvas.getContext('2d');
+
+    // Canvas dimentions
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Canvas config
+    context.lineJoin = 'round';
+    context.lineCap = 'round';
+    context.lineWidth = 50;
+
+    // Application state
+    let mousedown = false;
+    let lastX = 0;
+    let lastY = 0;
+    let hue = 0;
+    let incrementSize = true;
+
+    function draw(event) {
+      if (!mousedown) {
+        return;
+      }
+
+      // Line color
+      context.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+
+      // Draw the line
+      context.beginPath();
+      context.moveTo(lastX, lastY); // start from
+      context.lineTo(event.offsetX, event.offsetY); // go to
+      context.stroke();
+
+      // Update state
+      [lastX, lastY] = [event.offsetX, event.offsetY];
+
+      // Increment hue (this changes the line color)
+      hue++;
+
+      // 0 <= Hue < 360
+      if (hue >= 360) {
+        hue = 0;
+      }
+
+      // 1 <= Line Width <= 100
+      if (context.lineWidth >= 100 || context.lineWidth <= 1) {
+        incrementSize = !incrementSize;
+      }
+
+      incrementSize ? context.lineWidth++ : context.lineWidth--;
+    }
+
+    // Attach event listeners
+    canvas.addEventListener('mousedown', (event) => {
+      mousedown = true;
+      [lastX, lastY] = [event.offsetX, event.offsetY];
+    });
+
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', () => mousedown = false);
+    canvas.addEventListener('mouseout', () => mousedown = false);
+  </script>
+
+</body>
+</html>
