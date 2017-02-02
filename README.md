@@ -14,3 +14,4 @@
 | [7](./7-more-array-methods) | Array methods (continued) |
 | [8](./8-canvas) | Canvas |
 | [9](./9-console-tips) | Console Tips and Tricks |
+| [10](./10-multiple-checkboxes) | Hold Shift to check multiple checkboxes |

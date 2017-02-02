@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hold Shift to Check Multiple Checkboxes</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!--
+   The following is a common layout you would see in an email client.
+   When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked.
+  -->
+  <div class="inbox">
+    <div class="item">
+      <input type="checkbox">
+      <p>This is an inbox layout.</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check one item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Hold down your Shift key</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check a lower item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Everything inbetween should also be set to checked</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Try do it with out any libraries</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Just regular JavaScript</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Good Luck!</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Don't forget to tweet your result!</p>
+    </div>
+  </div>
+
+  <!-- Logic -->
+  <script>
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    // Global state
+    let firstIndex;
+
+    // Attach event listeners
+    checkboxes.forEach((checkbox, index) => {
+      checkbox.addEventListener('click', handleClick.bind(null, index));
+    });
+
+    // Event handlers
+    function handleClick(index, event) {
+      if (!firstIndex) {
+        firstIndex = index;
+        return;
+      }
+
+      if (!event.shiftKey) {
+        firstIndex = index;
+        return;
+      }
+
+      const lastIndex = index;
+
+      Array.from(checkboxes)
+        .filter((checkbox, index) => isWithinRange(index, firstIndex, lastIndex))
+        .forEach(checkbox => checkbox.checked = true);
+
+      firstIndex = null;
+    }
+
+    // Helpers
+    function isWithinRange(x, lower, upper) {
+      if (lower < upper) {
+        return x >= lower && x <= upper;
+      } else {
+        return x >= upper && x <= lower;
+      }
+    }
+  </script>
+
+</body>
+</html>
