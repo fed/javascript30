@@ -13,3 +13,4 @@
 | [6](./6-ajax-typeahead-search) | Ajax Typeahead search |
 | [7](./7-more-array-methods) | Array methods (continued) |
 | [8](./8-canvas) | Canvas |
+| [9](./9-console-tips) | Console Tips and Tricks |

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Console tips and tricks</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">Lorem ipsum dolor sit amet.</p>
+
+  <!-- Logic -->
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+    const paragraph = document.querySelector('p');
+
+    function makeGreen() {
+      paragraph.style.color = '#BADA55';
+      paragraph.style.fontSize = '50px';
+    }
+
+    // Clear
+    console.clear();
+
+    // Regular
+    console.log('Hello world');
+
+    // Interpolated
+    console.log('Hello world %s', '👋 🌏');
+
+    // Styled
+    console.log('%c Hello world', 'font-size:26px; color:red; font-weight: bold')
+
+    // Warning
+    console.warn('Yellow Warning'); // displays stacktrace
+
+    // Error
+    console.error('Red Error'); // displays stacktrace
+
+    // Info
+    console.info('Blue info');
+
+    // Assert
+    console.assert(paragraph.classList.contains('ouch'), 'Could not find classname applied');
+
+    // Viewing DOM Elements
+    console.dir(paragraph);
+
+    // Grouping together
+    dogs.forEach(dog => {
+      console.groupCollapsed(`${dog.name}`); // also console.group to make it start off expanded
+      console.log(dog);
+      console.groupEnd(`${dog.name}`);
+    });
+
+    // Counting
+    console.count('Wes');
+    console.count('Wes');
+    console.count('Steve');
+    console.count('Steve');
+    console.count('Wes');
+
+    // Timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+      .then(response => response.json())
+      .then(data => {
+        console.timeEnd('fetching data');
+        console.log(data);
+      });
+
+    // Table formatted data
+    console.table(dogs);
+  </script>
+
+</body>
+</html>
