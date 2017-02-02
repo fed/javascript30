@@ -47,7 +47,7 @@ function handleClick(event) {
 
 DOM elements can be compared for identity (actually references get compared):
 
-```
+```js
 const items = document.querySelectorAll('.items');
 const firstItem = items[0];
 const secondItem = items[1];
