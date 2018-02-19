@@ -1,6 +1,6 @@
 html {
-  box-sizing: border-box;
   background: #ffc600;
+  box-sizing: border-box;
   font-family: sans-serif;
   font-size: 20px;
   font-weight: 200;
@@ -21,37 +21,37 @@ h1 {
 }
 
 .site-wrap {
-  max-width: 700px;
+  background: white;
   margin: 100px auto;
-  background:white;
-  padding:40px;
+  max-width: 700px;
+  padding: 40px;
   text-align: justify;
 }
 
 .align-left {
-  float:left;
-  margin-right:20px;
+  float: left;
+  margin-right: 20px;
 }
 
 .align-right {
-  float:right;
-  margin-left:20px;
+  float: right;
+  margin-left: 20px;
 }
 
 .slide-in {
-  opacity:0;
-  transition:all .5s;
+  opacity: 0;
+  transition: all 0.5s;
 }
 
 .align-left.slide-in {
-  transform:translateX(-30%) scale(0.95);
+  transform: translateX(-30%) scale(0.95);
 }
 
 .align-right.slide-in {
-  transform:translateX(30%) scale(0.95);
+  transform: translateX(30%) scale(0.95);
 }
 
 .slide-in.active {
-  opacity:1;
-  transform:translateX(0%) scale(1);
+  opacity: 1;
+  transform: translateX(0%) scale(1);
 }
