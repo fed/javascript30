@@ -1,0 +1,77 @@
+html {
+  align-items: center;
+  background: url('http://wes.io/hx9M/oh-la-la.jpg') center no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  display: flex;
+  font-family: Futura, 'Trebuchet MS', Arial, sans-serif;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.wrapper {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  padding: 20px;
+}
+
+h2 {
+  font-weight: 200;
+  margin: 0 0 15px;
+  text-align: center;
+}
+
+.plates {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.plates li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  font-weight: 100;
+  padding: 10px 0;
+}
+
+.plates label {
+  cursor: pointer;
+  flex: 1;
+}
+
+.plates input {
+  display: none;
+}
+
+.plates input + label:before {
+  content: '⬜️';
+  margin-right: 10px;
+}
+
+.plates input:checked + label:before {
+  content: '🌮';
+}
+
+.add-items-form {
+  margin-top: 20px;
+}
+
+.add-items-form input,
+.extra-controls button {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: 0;
+  padding: 10px;
+}
+
+.extra-controls {
+  margin-top: 10px;
+}
