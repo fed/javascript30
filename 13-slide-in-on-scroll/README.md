@@ -44,7 +44,7 @@ const isHalfShown = slideInAt > image.offsetTop;
 const isScrolledPast = window.scrollY > imageBottom;
 ```
 
-# Custom debounce implementation
+## Custom debounce implementation
 
 ```js
 function debounce(func, wait = 20, immediate = true) {
