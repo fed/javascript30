@@ -1,20 +1,28 @@
 # Key Points
 
+## Create an array buffer of length `n`
+
+```js
+const buffer = [];
+
+buffer.splice(-n - 1, buffer.length - n);
+```
+
 ## DOM's `html` and `body`
 
 Targetting the `html` tag:
 
 ```js
-document.body.parentElement.style.height = '100%';
+const html = document.body.parentElement;
 
  //or
-document.firstElementChild.style.height = '100%';
+const html = document.firstElementChild;
 ```
 
 Targetting the `body` tag:
 
 ```js
-document.body.style.backgroundColor = '#3cca5e';
+const body = document.body;
 ```
 
 ## Assigning multiple inline styles at once
@@ -44,12 +52,4 @@ Object.assign(element.style, {
 
 // or
 element.setAttribute('style', 'background-color: #3cca5e; font-size: 150px; ...');
-```
-
-## Create an array buffer of length `n`
-
-```js
-const buffer = [];
-
-buffer.splice(-n - 1, buffer.length - n);
 ```
