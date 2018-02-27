@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Event Capture, Propagation, Bubbling and Once</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="one">
+    <div class="two">
+      <div class="three" />
+    </div>
+  </div>
+
+<script>
+const divs = document.querySelectorAll('div');
+
+function logText(event) {
+  // event.stopPropagation();
+
+  console.log(`Event handled by: ${this.classList.value}`);
+
+  // Within the handler:
+  // * `this` is the element firing the event on the capture/bubble phase
+  // * `event.target` is the element you've actually clicked on
+  console.log('this', this);
+  console.log('event.target', event.target);
+  console.log('---------------------------------');
+}
+
+divs.forEach(div =>
+  div.addEventListener('click', logText, {
+    capture: false,
+    once: false
+  })
+);
+</script>
+</body>
+</html>
