@@ -2,8 +2,8 @@
 
 ## Vertical offsets and scroll
 
-* `element.offsetTop` represents how far (in pixels) our elements is from the top of the page.
-* `window.scrollY` represents how far (in pixels) we've scrolled from the top of the page.
+* `element.offsetTop` represents how far down (in pixels) our element is from the top of the page.
+* `window.scrollY` represents how far down (in pixels) we've scrolled from the top of the page.
 
 ## The `scroll` event
 
@@ -25,7 +25,7 @@ You cannot animate the width of something using CSS. So instead of using:
 }
 ```
 
-you need to use:
+you need to do:
 
 ```css
 .logo {
@@ -35,5 +35,5 @@ you need to use:
 }
 
 .fixed-nav .logo {
-  max-width: 500px; /* ANY width larger than the actual element */
+  max-width: 500px; /* just pick ANY width larger than the actual element */
 }
