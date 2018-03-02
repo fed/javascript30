@@ -37,3 +37,5 @@ keygen, link, meta, param, source, track, wbr
 The `/` is completely optional on the above tags, however, so `<img />` is not different from `<img>`, but `<img></img>` is invalid.
 
 `video` is not a self-closing tag.
+
+Given an empty instance of an element whose content model is not EMPTY (for example, an empty title or paragraph) do not use the minimised form (e.g. use `<p> </p>` and not `<p />`) even though the self-closing form is still understood by the browser.
