@@ -83,3 +83,5 @@ Within event handlers:
 * `event.target` is the element you've actually clicked on
 
 And they are not always the same, particularly for nested elements.
+
+⚠️ **Heads up!** For `this` to be the element, you can't use fat arrow functions on your event handler. Use a proper function instead. ⚠️

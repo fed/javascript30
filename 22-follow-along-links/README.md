@@ -18,6 +18,14 @@ This returns all the information of WHERE in the page that element lives in.
 |-- y
 ```
 
+⚠️ Note that the `top`, `bottom`, `left`, `right` values returned by `getBoundingClientRect()` refer to the window (i.e. only the currently visible portion of the page) and not the document (i.e. whole page).
+
+Hence, to get the distance between your element and the top of the document (NOT the top of the window but the Y coordinate = 0), you need to add up the value of the current vertical scroll:
+
+```
+element.getBoundingClientRect().top + window.scrollY;
+```
+
 ## Create an element and append it to the DOM
 
 ```js
@@ -32,10 +40,11 @@ document.body.appendChild(highlight);
 window.scrollY
 ```
 
-## `mouseenter` event
+## Mouse events
 
 ```js
-link.addEventListener('mouseenter', highlightLink)
+link.addEventListener('mouseenter', highlightLink); // HOVER
+link.addEventListener('mouseleave', highlightLink);
 ```
 
 ## Multiple CSS gradient backgrounds
